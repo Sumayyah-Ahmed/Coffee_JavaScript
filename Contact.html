@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>My Favorite Hobby :: Contact</title>
+<link href="styles.css" rel="stylesheet" />
+<script> 
+
+function calc()
+{
+var n1 = parseInt(document.getElementById('n1').value);
+var n2 = parseInt(document.getElementById('n2').value);
+var oper = document.getElementById('operators').value;
+if (oper === "+")
+{
+var n2 = document.getElementById("result").value = n1+n2;
+}
+}
+</script>
+
+</head>
+<body>
+<a href="index.html">&#xA0;
+<header>
+<h1>My Favorite Hobby</h1>
+</header>
+</a><br  />
+<nav>
+<a href="Part.html">Party</a> &#xA0;
+<a href="Schedule.html">Schedule</a> &#xA0;
+<a href="Index.html">Home</a> &#xA0;
+<a href="Security.html">Security</a> &#xA0;
+</nav>
+<article> <br  /><br  />
+<style>
+
+#map{
+
+width: 500px;
+
+height: 500px;
+
+}
+
+#info{
+
+height:60px;
+
+width:200px;
+
+}
+</style>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+
+if (navigator.geolocation) {
+
+navigator.geolocation.getCurrentPosition(function (p) {
+
+var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+
+var mapOptions = {
+
+center: LatLng,
+
+zoom: 13,
+
+mapTypeId: google.maps.MapTypeId.ROADMAP
+
+};
+
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+var marker = new google.maps.Marker({
+
+position: LatLng,
+
+map: map,
+
+title: "<div id='info'><b>Your location:</b><br />Latitude: " + p.coords.latitude + "<br />Longitude: " + p.coords.longitude+ "<br />Altitude: " + p.coords.altitude
+
+});
+
+google.maps.event.addListener(marker, "click", function (e) {
+
+var infoWindow = new google.maps.InfoWindow();
+
+infoWindow.setContent(marker.title);
+
+infoWindow.open(map, marker);
+
+});
+
+});
+
+} else {
+
+alert('Geo Location not supported in your browser.');
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div id="map"></div>
+<h2>Calculate your total with us.</h2>
+<input type="text" id="n1"/><br/><br/>
+<input type="text" id="n2"/><br/><br/>
+<select id="operators">
+<option value="+">+</option>
+</select>
+<button onclick="calc();">=</button>
+<input type="text" id="result"/>
+<br/><br/>
+<form id="form">
+<input type="text" id="username" placeholder="Username" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="submit" value="Register">
+</form>
+
+<script>
+
+var form = document.getElementById("form")
+form.addEventListener("submit",function(event){
+event.preventDefault()
+var username = document.getElementryById("username").value
+console.log(username)
+var email = document.getElementryById("email").value
+})
+</script></article>
+
+</body>
+</html>  
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>My Favorite Hobby :: Home</title>
+<link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+<a href="index.html">&#xA0;
+<header>
+<h1>My Favorite Hobby</h1>
+</header>
+</a><br  />
+<nav>
+<a href="Party.html">Party</a> &#xA0;
+<a href="Schedule.html">Schedule</a> &#xA0;
+<a href="Contact.html">Contact</a> &#xA0;
+<a href="Security.html">Security</a> &#xA0;
+
+</nav><br  /><br  />
+<article>
+<h1 id = "para1" 
+     style="display: flex; margin: auto; justify-content: center;">
+    I love DHTML
+
+</h1> 
+<input type = "Submit" 
+       onclick = "Click()"
+	   style="display: flex; margin: auto; justify-content: center;" /> 
+	    
+       
+<script> 
+    function Click() { 
+        document.getElementById("para1").style.color = "blue"; 
+        window.alert("Color changed to blue"); 
+    } 
+</script>
+
+<h2>Visit us For Best Coffee</h2>
+<script>
+// coffee shop
+document.write ("<p>Coffee is a drink prepared from roasted coffee beans. Darkly colored, bitter, and slightly acidic,coffee has a stimulating effect on humans, primarily due to its caffeine content.It is the most popular hot drink in the world. I love Coffee and other drinks very much!</p>")
+document.write ("<ol><li>Special Coffee and Tea</li>")
+document.write ("<li>Green Tea</li>")
+document.write ("<li>Pink Tea</li>")
+document.write ("<li>Lemonade</li>")
+document.write ("<li>Fresh Juice</li></ol>")
+
+ </script></article>
+
+<h3>Multiple Options</h3>
+
+</head>
+
+<body>
+
+<select multiple id="choice">
+
+<option>Special Coffee and Tea</option>
+
+<option>Green Tea</option>
+
+<option>Pink Tea</option>
+
+<option>Lemonade</option>
+
+<option>Fresh Juice</option>
+
+</select>
+
+<p>Always hold down the Ctrl (windows) / Command (Mac) button to select and unselect multiple options.</p>
+
+<p>If you don't hold the Ctrl (windows) / Command (Mac) button to unselect the last remaining option, it will remain selected.</p>
+
+<p id="result"></p>
+
+<script>
+
+var select = document.getElementById('choice');
+
+var selectionsArray = [];
+
+var paragraph = document.getElementById('result');
+
+
+
+function optionSelected (option) {
+
+if (selectionsArray.includes(option.text)) {
+
+selectionsArray.splice(selectionsArray.indexOf(option.text), 1);
+
+} else {
+
+selectionsArray.push(option.text);
+
+}
+
+}
+
+
+select.options[0].onclick = function () {
+
+optionSelected(select.options[0]);
+
+};
+
+select.options[1].onclick = function () {
+
+optionSelected(select.options[1]);
+
+};
+
+select.options[2].onclick = function () {
+
+optionSelected(select.options[2]);
+
+};
+
+select.options[3].onclick = function () {
+
+optionSelected(select.options[3]);
+
+};
+
+select.options[4].onclick = function () {
+
+optionSelected(select.options[4]);
+
+};
+
+
+
+function convertArrayToString () {
+
+if (selectionsArray.length === 0) {
+
+paragraph.innerHTML = 'No element is selected';
+
+} else {
+
+var string = 'Selected elements are ';
+
+for (var i = 0; i < selectionsArray.length; i++) {
+
+string = string + selectionsArray[i] + ', ';
+
+}
+
+paragraph.innerHTML = string;
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
+
+

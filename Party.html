@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>My Favorite Hobby :: Party</title>
+<link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+<a href="index.html">&#xA0;
+<header>
+<h1> My Favorite Hobby</h1>
+</header>
+</a><br  />
+<nav>
+
+<a href="index.html">Home</a> &#xA0;
+<a href="Schedule.html">Schedule</a> &#xA0;
+<a href="Contact.html">Contact</a> &#xA0;
+<a href="Security.html">Security</a> &#xA0;
+</nav><br  /><br  />
+<article>
+
+<h2>Join the Party with kids and elders.</h2>
+
+<script>
+document.write ("<p>My favorite hobby is drinking coffee and always moving forward.I would love to invite you all to my coffee and drinks party.</p>")
+
+</script></article>
+<h2>Countdown for the Party.</h2>
+<div id="uptimerOpt"></div>
+
+    
+    <script>
+      // start timer
+      let theStartTimerVal = setInterval(startTheUpTimerNow, 1000);
+
+      // starting time is 0
+      let secondsTimeOverall = 0;
+
+      // function to show count up timer on page
+      function startTheUpTimerNow() {
+        // increment timer's seconds every second b y1
+        ++secondsTimeOverall;
+
+        // get hours of count up timer by using total seconds
+        let valueOfCountUpHrs = Math.floor(secondsTimeOverall / 3600);
+         // get minutes of count up timer by using total seconds
+        let valOfCountUpMinuts = Math.floor((secondsTimeOverall - valueOfCountUpHrs * 3600) / 60);
+         // get seconds of count up timer by using total seconds
+        let valOfCountUpSecs = secondsTimeOverall - (valueOfCountUpHrs * 3600 + valOfCountUpMinuts * 60);
+
+        // SHOW 3 TEXT INPUT BOXES OF SIZE 5 WITH TIMER ON PAGE AS ASKED IN QUESTION
+        document.querySelector("#uptimerOpt").innerHTML = `<input type='text' size='5' value='${valueOfCountUpHrs}'>: <input type='text' size='5' value='${valOfCountUpMinuts}'>: <input type='text' size='5' value='${valOfCountUpSecs}'>`;
+      }
+
+    </script>
+
+
+
+
+
+
+
+<main>
+<h3>Please fill out the form below to join the party</h3>
+<p>All information is required.</p>
+<form method="post" action="https://webdevbasics.net/scripts/yoga.php">
+<label for="myName">Name:</label><input type="text" required="required"  name="myName" id="myName" />
+<label for="myEmail">Email:</label><input type="email" required="required" name="myEmail" id="myEmail" />
+<label for="Howdidyouhearaboutus?">How did you hear about us?</label>
+<input type="text" required="required" name="myRefer" id="myRefer" list="referral" />
+<datalist id="referral">
+<option>Google</option>
+<option>Bing</option>
+<option>Facebook</option>
+<option>Friend</option>
+<option>Radio Ad</option>
+</datalist>
+<label for="myComments">Comments:</label>
+<textarea name="myComments" id="myComments" rows="2" cols="20" required="required" ></textarea>
+<input type="submit" id="mySubmit" value="Send Now" name="mySubmit" />
+</form>
+</main>
+</body>
+</html>  
